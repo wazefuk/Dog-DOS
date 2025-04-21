@@ -2,6 +2,7 @@ import time
 import random
 import globalvar
 import cmddef
+import csv
 
 def start():
     print("Welcome to Dog DOS!")
@@ -40,6 +41,19 @@ def command():
             cmddef.addpass(newpass)
             print("Password added.")
             return "addpass"
+    elif cmd[:5].lower() == "bark ":
+        print(cmd[5:].upper())
+        return "bark"
+    elif cmd.lower() == "cat":
+        temp1 = cmddef.cat()
+        if temp1 == None:
+            while temp1 == None:
+                temp1 = cmddef.cat()
+            print(temp1)
+        else:
+            print(temp1)
+            return "cat"
+        return "empty"
     else:
         print("DOG DOES NOT UNDERSTAND")
         return None
