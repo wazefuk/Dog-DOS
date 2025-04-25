@@ -1,31 +1,5 @@
-import time
-import random
-import globalvar
 import cmddef
-import csv
-
-def start():
-    print("Welcome to Dog DOS!")
-    time.sleep(3)
-    print("THIS IS PROPERTY OF DOG")
-    time.sleep(3)
-    print("DO NOT BOOT WITHOUT AUTHORIZATION")
-    time.sleep(3)
-    password = input("INPUT PASSWORD TO CONTINUE: ")
-    if password in globalvar.passes:
-        if random.randrange(1,100) == 34:
-            while True:
-                print("ERROR! ERROR! KERNEL PANIC!")
-        else:
-            print("ACCESS GRANTED")
-            return True
-    elif "cat" in password.lower() and not password == "CatSUX293":
-        print("NO")
-        quit()
-    else:
-        print("ACCESS DENIED")
-        time.sleep(3)
-        quit()
+import random
 
 def command():
     cmd = input("DogDOS> ")
@@ -79,13 +53,8 @@ def command():
             print("🦴🦴🦴🦴 DOG GOT FOUR TREATS!!!")
             return "treat"
         elif temp2 == 5:
-            print("🦴🦴🦴🦴🦴 DOG GOT FIVE TREATS!!!")
+            print("🦴🦴🦴🦴🦴 DOG GOT FIVE TREATS!!! YAYAYAYAY")
             return "treat"
     else:
         print("DOG DOES NOT UNDERSTAND")
         return None
-
-start()
-
-while True:
-    command()
